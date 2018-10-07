@@ -1,0 +1,23 @@
+{
+  "name": "wordguess-cli",
+  "version": "1.0.0",
+  "description": "## Instructions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chancy23/wordguess-CLI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chancy23/wordguess-CLI/issues"
+  },
+  "homepage": "https://github.com/chancy23/wordguess-CLI#readme",
+  "dependencies": {
+    "inquirer": "^6.2.0",
+    "npm": "^6.4.1"
+  }
+}
