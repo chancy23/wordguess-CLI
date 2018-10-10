@@ -1,6 +1,6 @@
 //variable to hold the input from the CLI (this may need to be moved to the index file, with the inquirer npm after built)
-var letter = process.argv[2];
-console.log("This is the letter guessed: " + letter);
+// var letter = process.argv[2];
+// console.log("This is the letter guessed: " + letter);
 
 //create a constructor function for Letter
 var Letter = function(char){
@@ -12,7 +12,7 @@ var Letter = function(char){
     this.displayChar = function(){
         if (this.isLetter){
             //display the char (hidden letter) if the isLetter var is set to true
-            console.log("That is the char " + this.char);
+            console.log(this.char);
         }
         //or an underscore if not
         else {
@@ -36,11 +36,15 @@ var Letter = function(char){
     };
 };
 
-var newLetter = new Letter("r");
-//call the replaceChar function on the new letter object to determine if input (letter) is equal to its char ("r" in this example)
-newLetter.replaceChar(letter);
-//console.log the object for testing
-console.log("this is the new letter: " + JSON.stringify(newLetter));
+//var newLetter = new Letter("r");
+//newLetter.displayChar();
+
+// call the replaceChar function on the new letter object to determine if input (letter) is equal to its char ("r" in this example)
+//this works and callsthe displayChar function, but displayChar function isn't being recognized as a function??
+//newLetter.replaceChar(letter);
+
+// console.log the object for testing
+//console.log("this is the new letter: " + JSON.stringify(newLetter));
 
 //export this constructor to the word.js file to be used for the word to guess
 module.exports = Letter;
