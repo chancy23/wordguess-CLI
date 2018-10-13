@@ -1,23 +1,22 @@
-//variable to hold the input from the CLI (this may need to be moved to the index file, with the inquirer npm after built)
-// var letter = process.argv[2];
-// console.log("This is the letter guessed: " + letter);
 
 //create a constructor function for Letter
 var Letter = function(char){
     //create an empty string variable to store the character for the letter
-    this.char = char;
+    this.char = char
     //create a boolean value to say true if letter is guess or false if not
     this.isLetter = false;
     //create a method to display the character when guessed
     this.displayChar = function(){
-        if (this.isLetter){
+        if (this.isLetter === true){
             //display the char (hidden letter) if the isLetter var is set to true
-            console.log(this.char);
+            // console.log(this.char);
+            return this.char;
         }
         //or an underscore if not
         else {
             // console.log("That isn't the character");
-            console.log("_ ");
+            var underscore = "_";
+            return underscore;
         };
     };
     //create a method that takes the character/letter as an arguement and checks it against the "hidden" letter,
@@ -31,20 +30,9 @@ var Letter = function(char){
             //if it isn't then set to be false
             this.isLetter = false;
         };
-        //then call the displayChar function to determine if they need to show the char or an underscore
-        this.displayChar();
+        //console.log("the replaceChar function ran");
     };
 };
-
-//var newLetter = new Letter("r");
-//newLetter.displayChar();
-
-// call the replaceChar function on the new letter object to determine if input (letter) is equal to its char ("r" in this example)
-//this works and callsthe displayChar function, but displayChar function isn't being recognized as a function??
-//newLetter.replaceChar(letter);
-
-// console.log the object for testing
-//console.log("this is the new letter: " + JSON.stringify(newLetter));
 
 //export this constructor to the word.js file to be used for the word to guess
 module.exports = Letter;

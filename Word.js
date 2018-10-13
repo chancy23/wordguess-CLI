@@ -7,32 +7,30 @@ var Word = function(word){
     this.word = word;
     //create an array to hold the "new" Letter objects for the word
     this.wordCharacters = [];
+
+    this.outputArr = [];
+
+     //split the word into individual characters and push the the Letters object
+     for (var i = 0; i < this.word.length; i++) {
+        //console.log("this is the word " + this.word[i]);
+        //push the letters into the Letter object and put in the wordCharacter array
+        this.wordCharacters.push(new Letter(this.word[i]));
+    };
     
     //method to return a string of the letters in the word
-    this.wordString = function(){
-        //split the this.word into letters and save to a new variable 
-        var letters = this.word.split("");
-        //letters.toString();
-        
-        //console.log("this is the word split into letters: " + letters);
-
-        //for loop through the object to push each letter in the wordCharacters array as part of the Letters object
-        for (var i = 0; i < letters.length; i++) {
-            console.log(letters[i]);
-            //push the letters into the Letter object and put in the wordCharacter array
-            this.wordCharacters.push(new Letter(letters[i]));
-        };
-        
-        //console.log(this.wordCharacters)
-        //for each char need to run the displayChar method and display underscore in console.log
+    this.wordSplit = function(){
+        //console.log("the word array " + this.wordCharacters);
+        //loop through the wordCharacters array and put each letter as an output based on the call to the Letter's displayChar function
         for (var j = 0; j < this.wordCharacters.length; j++){
-            // call the displayChar method on each character in the word and return the word as a series of blanks (need to get on same line vs in sep lins)
-            this.wordCharacters[j].displayChar();
+            var outputLetter = this.wordCharacters[j].displayChar();
+            //push the output to the output Array to display in the conosole.
+            this.outputArr.push(outputLetter)
         };
+        //this is the last string that is showing, not sure how to to get the incremenntal strings in front of it to not be there
+        console.log("This is the word to guess: " + this.outputArr.join(" ") + " test");
     };
     //a method that  
     this.spellWord = function(letter){
-        
         //for loop to go through each letter object in the array
         for (var k = 0; k < this.wordCharacters.length; k++) {
             //console.log("this is word characters in spell word: " + JSON.stringify(this.wordCharacters[k], null, 2));
@@ -42,15 +40,4 @@ var Word = function(word){
     };
 };
 
-//create a new word object, using the word zebra for now
-// var newWord = new Word("zebra");
-
-//call the wordstring function to place the underscore for each character in the word
-//newWord.wordString();
-
-// call the spell word function to see if the letter input matches in the current word
-//newWord.spellWord(letter);
-
-module.exports = Word;
-
-    
+module.exports = Word;  
