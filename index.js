@@ -79,7 +79,7 @@ function generateWord(){
 
     //call the functions from the word constructor to split the word and generate the letters
     newWord.wordSplit();
-    newWord.spellWord(letter);
+    //newWord.spellWord();
     
     //allow the user to start input letters to guess
     guessLetter();
@@ -151,10 +151,10 @@ function guessLetter(){
                 };
                 //call the functions from teh word constructor to continue to spell out the word
                 newWord.wordSplit();
-                newWord.spellWord(letter); 
+                newWord.spellWord();
                 //check if win or loss to continue
                 checkWinLoss();
-            };  
+            };
         });
     };
 };

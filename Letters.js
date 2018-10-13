@@ -30,7 +30,6 @@ var Letter = function(char){
             //if it isn't then set to be false
             this.isLetter = false;
         };
-        //console.log("the replaceChar function ran");
     };
 };
 
