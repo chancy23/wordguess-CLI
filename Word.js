@@ -27,7 +27,7 @@ var Word = function(word){
             this.outputArr.push(outputLetter)
         };
         //this is the last string that is showing, not sure how to to get the incremenntal strings in front of it to not be there
-        console.log("This is the word to guess: " + this.outputArr.join(" ") + " test");
+        //console.log("This is the word to guess: " + this.outputArr.join(" ") + " test");
     };
     //a method that  
     this.spellWord = function(letter){
